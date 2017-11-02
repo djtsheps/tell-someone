@@ -8,8 +8,7 @@
 System dependencies (use Brew on OSX)
 
  - Postgresql 9.4+
- - Redis
- - Ruby 2.4.1 (Or as specified in Gemfile)
+ - Ruby 2.4.1
 
 Clone the repository & enter the required environment variables
 
@@ -86,17 +85,3 @@ $ bin/rails t -v
 
 ## Deployment
 
-
-## Environment variables / Rails 5.1 Encrypted Secrets
-
-The Environment Variables for this project have been moved into an encrypted secrets file `config/secrets.yml.enc`.
-This removes the need to maintain a `.env.example` file or to try and ensure everyone has the same values as their Env Vars.
-The `config/secrets.yml.enc` file is read/decrypted with the use of what is called a rails master key.
-This can be stored in the ENV['RAILS_MASTER_KEY'] var, or in the `config/secrets.yml.key` file which should NEVER be commited into the repo. When adding the key to the `config/secrets.yml.key` file, the key should be the only thing in the file.
-
-The Master Key is stored in the 1password team vault.
-
-### View/Edit Secrets
-
-To open the secrets file you can run the following command.
-`EDITOR="${editor_name}" ./bin/rails secrets:edit`
